@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/context 
+       http://www.springframework.org/schema/context/spring-context-4.0.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+
+	<!-- <bean id="car1;car2" class="com.asiainfo.Car"/> -->
+	<!-- <bean name="user1 123 **user2" class="com.asiainfo.User"/> -->
+
+	<!-- <bean name="car1" class="com.asiainfo.Car"/> -->
+	<!-- <bean name="car1" class="com.asiainfo.User"/> -->
+
+	<!-- <bean class="com.asiainfo.Car"/> -->
+	<!-- <bean class="com.asiainfo.Car"/> -->
+	<!-- <bean class="com.asiainfo.Car"/> -->
+
+	<!-- 依赖注入的方式一——属性注入 -->
+<!-- 	<bean id="car" class="com.asiainfo.Car"> -->
+<!-- 		<property name="aAa">  注意，property标签的name属性的值，不是和Java类里面的成员变量名一致，而是与setter方法的方法名去掉前面的“set”剩下的部分（说字母大小写无所谓）一致 -->
+<!-- 			<value>123</value> -->
+<!-- 		</property> -->
+<!-- 		<property name="brand"> -->
+<!-- 			<value>"Benz"</value> -->
+<!-- 		</property> -->
+<!-- 		<property name="price"> -->
+<!-- 			<value>10000</value> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+
+	<!-- 依赖注入的方式二——通过构造函数注入 -->
+<!-- 	<bean id="car2" class="com.asiainfo.Car2"> -->
+		<!-- <constructor-arg index="0" type="double"> -->
+		<!-- <value>123</value> -->
+		<!-- </constructor-arg> -->
+		<!-- <constructor-arg index="1" type="java.lang.String"> -->
+		<!-- <value>cons_红旗</value> -->
+		<!-- </constructor-arg> -->
+<!-- 		<constructor-arg> -->
+<!-- 			<value>123</value> -->
+<!-- 		</constructor-arg> -->
+<!-- 		<constructor-arg> -->
+<!-- 			<ref bean="user"></ref> -->
+<!-- 		</constructor-arg> -->
+<!-- 	</bean> -->
+
+<!-- 	<bean id="user" class="com.asiainfo.User"></bean> -->
+
+	<!-- 模拟构造器注入的循环依赖问题 -->
+<!-- 	<bean id="car3" class="com.asiainfo.Car3"> -->
+<!-- 		<constructor-arg index="0" type="java.lang.String"> -->
+<!-- 			<value>car3_Benz</value> -->
+<!-- 		</constructor-arg> -->
+<!-- 		<constructor-arg index="1" type="com.asiainfo.User2"> -->
+<!-- 			<ref bean="user2"></ref> -->
+<!-- 		</constructor-arg> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean id="user2" class="com.asiainfo.User2"> -->
+<!-- 		<constructor-arg index="0" type="java.lang.String"> -->
+<!-- 			<value>zzw</value> -->
+<!-- 		</constructor-arg> -->
+<!-- 		<constructor-arg index="1" type="com.asiainfo.Car3"> -->
+<!-- 			<ref bean="car3"></ref> -->
+<!-- 		</constructor-arg> -->
+<!-- 	</bean> -->
+
+<!-- 	<bean id="car3" class="com.asiainfo.Car3"> -->
+<!-- 		<property name="brand"> -->
+<!-- 			<value>car3_Benz</value> -->
+<!-- 		</property> -->
+<!-- 		<property name="user2"> -->
+<!-- 			<ref bean="user2"/> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean id="user2" class="com.asiainfo.User2"> -->
+<!-- 		<property name="name"> -->
+<!-- 			<value>zzw</value> -->
+<!-- 		</property> -->
+<!-- 		<property name="car3"> -->
+<!-- 			<ref bean="car3"></ref> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+
+	<!-- 注入方式三——工厂方法注入 -->
+<!-- 	<bean id="carFactory" class="com.asiainfo.CarFactory"></bean> -->
+	<!-- 非静态工厂方法注入 -->
+<!-- 	<bean id="car4" factory-bean="carFactory" factory-method="getACar4"></bean> -->
+<!-- 	<bean id="car4" class="com.asiainfo.CarFactory" factory-method="createCar4"></bean> -->
+
+	<!-- 注入参数——字面值 -->
+<!-- 	<bean id="car5" class="com.asiainfo.Car5"> -->
+<!-- 		<property name="brand"> -->
+<!-- 			<value><![CDATA[<红旗>汽车]]></value> -->
+<!-- 		<value>&lt;红旗&gt;汽车2</value> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+
+	<!-- 注入参数——引用其他bean -->
+<!-- 	<bean id="car5" class="com.asiainfo.Car5"> -->
+<!-- 		<property name="brand"> -->
+<!-- 			<value>BMW_father</value> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+<!-- 	<bean id="user3" class="com.asiainfo.User3"> -->
+<!-- 		<property name="car5"> -->
+<!-- 			<ref bean="car5"/> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+
+	<!-- 注入参数——内部bean -->
+<!-- 	<bean id="user3" class="com.asiainfo.User3"> -->
+<!-- 		<property name="car5"> -->
+<!-- 			<bean class="com.asiainfo.Car5"> -->
+<!-- 				<property name="brand"> -->
+<!-- 					<value>内部bean</value> -->
+<!-- 				</property> -->
+<!-- 			</bean> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+
+	<!-- 注入参数——null值 -->
+<!-- 	<bean id="user3" class="com.asiainfo.User3"> -->
+<!-- 		<property name="name"> -->
+			<!-- 注入空串-->
+<!-- 			<value></value> -->
+			<!-- 注入null值 -->
+<!-- 			<null></null> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+	
+	<!-- 注入参数——级联属性 -->
+<!-- 	<bean id="user4" class="com.asiainfo.User4"> -->
+<!-- 		<property name="car5.brand"> -->
+<!-- 			<value>级联属性</value> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+
+	<!-- 注入参数——集合 -->
+<!-- 	<bean id="user4" class="com.asiainfo.User4"> -->
+<!-- 		<property name="strList"> -->
+<!-- 			<list> -->
+<!-- 				<value>BMW</value> -->
+<!-- 				<value>Benz</value> -->
+<!-- 				<value>Audi</value> -->
+<!-- 			</list> -->
+<!-- 		</property> -->
+<!-- 		<property name="intArr"> -->
+<!-- 			<list> -->
+<!-- 				<value>1</value> -->
+<!-- 				<value>3</value> -->
+<!-- 				<value>5</value> -->
+<!-- 			</list> -->
+<!-- 		</property> -->
+<!-- 		<property name="strSet"> -->
+<!-- 			<set> -->
+<!-- 				<value>str1</value> -->
+<!-- 				<value>str2</value> -->
+<!-- 				<value>str3</value> -->
+<!-- 			</set> -->
+<!-- 		</property> -->
+<!-- 		<property name="mapTest"> -->
+<!-- 			<map> -->
+<!-- 				<entry> -->
+<!-- 					<key> -->
+<!-- 						<value>1</value> -->
+<!-- 					</key> -->
+<!-- 					<value>str1</value> -->
+<!-- 				</entry> -->
+<!-- 				<entry> -->
+<!-- 					<key> -->
+<!-- 						<value>2</value> -->
+<!-- 					</key> -->
+<!-- 					<value>str2</value> -->
+<!-- 				</entry> -->
+<!-- 			</map> -->
+<!-- 		</property> -->
+<!-- 		<property name="carMap"> -->
+<!-- 			<map> -->
+<!-- 				<entry> -->
+<!-- 					<key> -->
+<!--  						<value>BMW</value> -->
+<!-- 						<ref bean="strBean"/> -->
+<!-- 					</key> -->
+<!-- 					<ref bean="car5"/> -->
+<!-- 				</entry> -->
+<!-- 			</map> -->
+<!-- 		</property> -->
+<!-- 		<property name="proTest"> -->
+<!-- 			<props> -->
+<!-- 				<prop key="mail">934109401@qq.com</prop> -->
+<!-- 				<prop key="tel">158</prop> -->
+<!-- 			</props> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+<!-- 	<bean id="car5" class="com.asiainfo.Car5"> -->
+<!-- 		<property name="brand"> -->
+<!-- 			<value>BMW_father</value> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+	<bean id="strBean" class="java.lang.String">
+		<constructor-arg index="0" type="java.lang.String">
+			<value>Benz</value>
+		</constructor-arg>	
+	</bean>
+	
+	<!-- 集合合并 -->
+	<bean id="user4Father" class="com.asiainfo.User4">
+		<property name="strList">
+			<list>
+				<value>str1</value>
+				<value>str2</value>
+				<value>str3</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="user4Son" class="com.asiainfo.User4" parent="user4Father">
+		<property name="strList">
+			<list merge="true">
+				<value>str4</value>
+				<value>str5</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 集合类型的bean -->
+	<util:list id="listBean" list-class="java.util.ArrayList" value-type="java.lang.String">
+		<value>aaa1</value>
+		<value>aaa2</value>
+		<value>aaa3</value>
+	</util:list>
+	
+	<util:set id="setBean" set-class="java.util.HashSet" value-type="java.lang.Integer">
+		<value>10</value>
+		<value>20</value>
+		<value>10</value>
+	</util:set>
+	
+	<util:map id="mapBean" map-class="java.util.HashMap">
+		<entry key="1" value="srt1" value-type="java.lang.String"></entry>
+	</util:map>
+	
+<!-- 	<bean id="user5" class="com.asiainfo.User5"> -->
+<!-- 		<property name="strList"> -->
+<!-- 			<ref bean="listBean"/> -->
+<!-- 		</property> -->
+<!-- 		<property name="intSet"> -->
+<!-- 			<ref bean="setBean"/> -->
+<!-- 		</property> -->
+<!-- 		<property name="mapTest"> -->
+<!-- 			<ref bean="mapBean"/> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+	
+	<!-- 简化配置 -->
+<!-- 	<bean id="car2" class="com.asiainfo.Car2"> -->
+<!-- 		<constructor-arg index="0" type="java.lang.String"> -->
+<!-- 			<value>BRAND</value> -->
+<!-- 		</constructor-arg> -->
+<!-- 		<constructor-arg index="0" type="java.lang.String" value="BRAND"></constructor-arg> -->
+<!-- 		<constructor-arg index="1" type="double" value="321"></constructor-arg> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean id="car" class="com.asiainfo.Car"> -->
+<!-- 		<property name="price"> -->
+<!-- 			<value>111</value> -->
+<!-- 		</property> -->
+<!-- 		<property name="brand" value="bbb"></property> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean id="user5" class="com.asiainfo.User5"> -->
+<!-- 		<property name="mapTest"> -->
+<!-- 			<map> -->
+<!-- 				<entry> -->
+<!-- 					<key> -->
+<!-- 						<value>123</value> -->
+<!-- 					</key> -->
+<!-- 					<value>str123</value> -->
+<!-- 				</entry> -->
+<!-- 			</map> -->
+<!-- 			<map> -->
+<!-- 				<entry key="123" value="str321"></entry> -->
+<!-- 			</map> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+
+	<bean id="car5" class="com.asiainfo.Car5">
+		<property name="brand" value="aaa_123"></property>
+	</bean>
+<!-- 	<bean id="user3" class="com.asiainfo.User3"> -->
+<!-- 		<property name="car5"> -->
+<!-- 			<ref bean="car5"/> -->
+<!-- 		</property> -->
+<!-- 		<property name="car5" ref="car5"></property> -->
+<!-- 		<constructor-arg index="0" type="com.asiainfo.Car5" ref="car5"></constructor-arg> -->
+<!-- 	</bean> -->
+<!-- 	<bean id="user4" class="com.asiainfo.User4"> -->
+<!-- 		<property name="carMap"> -->
+<!-- 			<map> -->
+<!-- 				<entry> -->
+<!-- 					<key> -->
+<!-- 						<ref bean="strBean2"/> -->
+<!-- 					</key> -->
+<!-- 					<ref bean="car5"/> -->
+<!-- 				</entry> -->
+<!-- 			</map> -->
+<!-- 			<map> -->
+<!-- 				<entry key-ref="strBean2" value-ref="car5"></entry> -->
+<!-- 			</map> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+<!-- 	<bean id="strBean2" class="java.lang.String"> -->
+<!-- 		<constructor-arg index="0" type="java.lang.String" value="kkk"></constructor-arg> -->
+<!-- 	</bean> -->
+	
+	<!-- 使用p命名空间进一步简化配置 -->
+<!-- 	<bean id="user3_p" class="com.asiainfo.User3" p:name="ppp" p:car5-ref="car5"></bean> -->
+	
+	<!-- 自动装配 -->
+<!-- 	<bean id="user6" class="com.asiainfo.User6"></bean> -->
+<!-- 	<bean name="zzxxcc,zxc" class="com.asiainfo.Car5"> -->
+<!-- 		<property name="brand" value="brand_自动装配"></property> -->
+<!-- 	</bean> -->
+<!-- 	<bean name="123,zxc1" class="com.asiainfo.Car5"> -->
+<!-- 		<property name="brand" value="brand_自动装配"></property> -->
+<!-- 	</bean> -->
+
+	<!-- 方法注入 -->
+<!-- 	<bean id="car_sin" class="com.asiainfo.Car" scope="prototype"></bean> -->
+<!-- 	<bean id="user7" class="com.asiainfo.User7" scope="singleton"> -->
+<!-- 		<property name="car" ref="car_sin"></property> -->
+<!-- 	</bean> -->
+<!-- 	<bean id="iService" class="com.asiainfo.IService"> -->
+<!-- 		<lookup-method name="getCar" bean="car_sin"></lookup-method> -->
+<!-- 	</bean> -->
+
+	<!-- 方法替换 -->
+	<bean id="user7" class="com.asiainfo.User7">
+		<replaced-method name="getANewCar" replacer="user8"></replaced-method>
+	</bean>
+	<bean id="user8" class="com.asiainfo.User8"></bean>
+</beans>
