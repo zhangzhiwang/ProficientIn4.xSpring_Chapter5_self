@@ -17,7 +17,7 @@ public class User6 {
 	}
 
 	public void setZzxxcc(Car5 zzxxcc) {
-		this.aaa = zzxxcc;
+		this.aaa = zzxxcc; 
 	}
 
 	@Override

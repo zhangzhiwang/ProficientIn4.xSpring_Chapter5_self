@@ -23,7 +23,7 @@ public class User4 {
 		return proTest;
 	}
 
-	public void setProTest(Properties proTest) {
+	public void setProTest(Properties proTest) { 
 		this.proTest = proTest;
 	}
 

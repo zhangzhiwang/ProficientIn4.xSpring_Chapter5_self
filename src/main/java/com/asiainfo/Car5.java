@@ -1,12 +1,15 @@
 package com.asiainfo;
 
+import org.springframework.stereotype.Component;
+
 /**
- * ÒÀÀµ×¢ÈëµÄ²ÎÊı
+ * ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½Ä²ï¿½ï¿½ï¿½
  *
  * @author Administrator
- * @date 2019Äê2ÔÂ4ÈÕ ÉÏÎç9:11:48
+ * @date 2019ï¿½ï¿½2ï¿½ï¿½4ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½9:11:48
  */
-public class Car5 {
+@Component(value="car55")
+public class Car5 { 
 	public String brand;
 	private User2 user2;
 
@@ -26,9 +29,9 @@ public class Car5 {
 		this.user2 = user2;
 	}
 
-	@Override
-	public String toString() {
-		return "Car5 [brand=" + brand + ", user2=" + user2 + "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "Car5 [brand=" + brand + ", user2=" + user2 + "]";
+//	}
 
 }

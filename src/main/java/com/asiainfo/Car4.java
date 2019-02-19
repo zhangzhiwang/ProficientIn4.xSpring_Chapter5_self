@@ -1,13 +1,18 @@
 package com.asiainfo;
 
+import org.springframework.core.annotation.Order;
+import org.springframework.stereotype.Component;
+
 /**
- * ÒÀÀµ×¢ÈëµÄ·½Ê½Èý¡ª¡ª¹¤³§·½·¨×¢Èë
+ * ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½Ä·ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½
  *
  * @author Administrator
- * @date 2019Äê2ÔÂ4ÈÕ ÉÏÎç9:11:48
+ * @date 2019ï¿½ï¿½2ï¿½ï¿½4ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½9:11:48
  */
-public class Car4 {
-	public String brand;
+@Component("car567")
+//@Order(value=1000)
+public class Car4 extends Car5 {
+	public String brand; 
 	private User2 user2;
 
 	public String getBrand() {
@@ -28,7 +33,7 @@ public class Car4 {
 
 	@Override
 	public String toString() {
-		return "Car3 [brand=" + brand + ", user2=" + user2 + "]";
+		return "Car4 [brand=" + brand + ", user2=" + user2 + "]";
 	}
 
 }

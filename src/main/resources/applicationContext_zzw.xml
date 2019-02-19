@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:util="http://www.springframework.org/schema/util"
 	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:zzw="http://www.asiainfo.com/schema/service"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
-       http://www.springframework.org/schema/context 
-       http://www.springframework.org/schema/context/spring-context-4.0.xsd
        http://www.springframework.org/schema/util
-       http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+       http://www.springframework.org/schema/util/spring-util-4.0.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-4.0.xsd
+       http://www.asiainfo.com/schema/service
+       http://www.asiainfo.com/schema/service.xsd
+       ">
 
 	<!-- <bean id="car1;car2" class="com.asiainfo.Car"/> -->
 	<!-- <bean name="user1 123 **user2" class="com.asiainfo.User"/> -->
@@ -291,9 +295,9 @@
 <!-- 		</property> -->
 <!-- 	</bean> -->
 
-	<bean id="car5" class="com.asiainfo.Car5">
-		<property name="brand" value="aaa_123"></property>
-	</bean>
+<!-- 	<bean id="car5" class="com.asiainfo.Car5"> -->
+<!-- 		<property name="brand" value="aaa_123"></property> -->
+<!-- 	</bean> -->
 <!-- 	<bean id="user3" class="com.asiainfo.User3"> -->
 <!-- 		<property name="car5"> -->
 <!-- 			<ref bean="car5"/> -->
@@ -342,8 +346,54 @@
 <!-- 	</bean> -->
 
 	<!-- 方法替换 -->
-	<bean id="user7" class="com.asiainfo.User7">
-		<replaced-method name="getANewCar" replacer="user8"></replaced-method>
-	</bean>
-	<bean id="user8" class="com.asiainfo.User8"></bean>
+<!-- 	<bean id="user7" class="com.asiainfo.User7"> -->
+<!-- 		<replaced-method name="getANewCar" replacer="user8"></replaced-method> -->
+<!-- 	</bean> -->
+<!-- 	<bean id="user8" class="com.asiainfo.User8"></bean> -->
+
+	<!-- bean之间的关系之——继承 -->
+<!-- 	<bean id="abstractCar" class="com.asiainfo.Car" p:aAa="120" p:brand="BMW" p:price="10000" abstract="true"></bean> -->
+<!-- 	<bean id="car1" class="com.asiainfo.Car" parent="abstractCar" p:brand="BMW5" depends-on="car2"></bean> -->
+
+	<!-- bean之间的关系之——依赖 -->
+<!-- 	<bean id="car123" class="com.asiainfo.Car"></bean> -->
+<!-- 	<bean id="car2" class="com.asiainfo.Car2" depends-on="car1"></bean> -->
+	
+	<!-- bean之间的关系之——引用 -->
+<!-- 	<bean id="user9" class="com.asiainfo.User9"> -->
+<!-- 		<property name="carId"> -->
+<!-- 			<idref bean="car123"/> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+	
+	<!-- 整合多个配置文件 -->
+<!-- 	<import resource="classpath:applicationContext_zzw_2.xml"></import> -->
+
+	<!-- bean的作用域 -->
+	<!-- 默认是singleton，并且spring容器会在初始化时实例化所有singleton的bean，如果不想在spring容器初始化时实例化则要进行懒加载 -->
+<!-- 	<bean id="car" class="com.asiainfo.Car" scope="singleton" lazy-init="true"></bean> -->
+	<!-- spring容器在启动时不会默认加载prototype的bean -->
+<!-- 	<bean id="car2" class="com.asiainfo.Car" scope="prototype"></bean> -->
+
+<!-- 	<bean id="car" class="com.asiainfo.CarFactoryBean" p:carInfo="300,BMW,1000.00"></bean> -->
+
+	<!-- 扫描注解定义的bean -->
+	<!-- <context:component-scan base-package="com.asiainfo" resource-pattern="service/*.class"></context:component-scan> -->  <!-- 组件扫描，扫描base-package属性所指定的包下面的组件 -->
+	<context:component-scan base-package="com.asiainfo" use-default-filters="true">
+<!-- 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/> -->
+<!-- 		<context:include-filter type="assignable" expression="com.asiainfo.Car7"/> -->
+<!-- 		<context:include-filter type="regex" expression="com\.asiainfow.*"/> -->
+<!-- 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/> -->
+	</context:component-scan>
+<!-- 	<bean id="car567" class="com.asiainfo.Car5"></bean> -->
+<!-- 	<bean id="car155" class="com.asiainfo.Car5"></bean> -->
+
+<!-- 	<bean id="user11" class="com.asiainfo.User11" init-method="met1" destroy-method="met2"></bean> -->
+<!-- 	<bean id="user11" class="com.asiainfo.User11"></bean> -->
+
+	<bean id="car88" class="com.asiainfo.Car8"></bean>
+	<bean id="car777" class="com.asiainfo.Car7"></bean>
+	
+	<!-- 自定义标签 -->
+	<zzw:zhangzw8 car="car88"></zzw:zhangzw8>
 </beans>

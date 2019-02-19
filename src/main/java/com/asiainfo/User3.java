@@ -17,7 +17,7 @@ public class User3 {
 	}
 
 	public User3(Car5 car5) {
-		super();
+		super(); 
 		this.car5 = car5;
 	}
 

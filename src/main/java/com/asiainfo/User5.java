@@ -17,7 +17,7 @@ public class User5 {
 		this.intSet = intSet;
 	}
 
-	public void setMapTest(Map<Integer, String> mapTest) {
+	public void setMapTest(Map<Integer, String> mapTest) { 
 		this.mapTest = mapTest;
 	}
 

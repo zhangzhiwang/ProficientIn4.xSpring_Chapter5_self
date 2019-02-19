@@ -16,7 +16,7 @@ public class User8 implements MethodReplacer {
 	}
 
 	@Override
-	public String toString() {
+	public String toString() { 
 		return "User8 [car=" + car + "]";
 	}
 

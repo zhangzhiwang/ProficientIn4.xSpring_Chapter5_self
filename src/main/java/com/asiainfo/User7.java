@@ -10,7 +10,7 @@ public class User7 {
 	public void setCar(Car car) {
 		this.car = car;
 	}
-
+ 
 	public Car getANewCar() {
 		Car car = new Car();
 		car.setBrand("BMW");

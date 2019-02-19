@@ -1,5 +1,8 @@
 package com.asiainfo;
 
-public interface IService {
+import org.springframework.stereotype.Component;
+
+@Component(value="iService")
+public interface IService { 
 	Car getCar();
 }

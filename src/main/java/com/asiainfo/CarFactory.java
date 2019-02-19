@@ -1,12 +1,12 @@
 package com.asiainfo;
 
 /**
- * ¹¤³§Àà
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  *
  * @author Administrator
- * @date 2019Äê2ÔÂ4ÈÕ ÉÏÎç10:59:41
+ * @date 2019ï¿½ï¿½2ï¿½ï¿½4ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½10:59:41
  */
-public class CarFactory {
+public class CarFactory { 
 	public Car4 getACar4() {
 		Car4 car4 = new Car4();
 		car4.setBrand("car4_brand non static");

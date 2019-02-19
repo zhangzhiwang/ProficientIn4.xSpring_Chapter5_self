@@ -3,7 +3,7 @@ package com.asiainfo;
 import java.io.Serializable;
 import java.util.Date;
 
-public class User implements Serializable{
+public class User implements Serializable{ 
 	private int userId;
 
 	private String userName;

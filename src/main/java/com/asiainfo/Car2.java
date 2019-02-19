@@ -1,19 +1,19 @@
 package com.asiainfo;
 
 /**
- * ÒÀÀµ×¢ÈëµÄ·½Ê½¶þ¡ª¡ª¹¹ÔìÆ÷×¢Èë
+ * ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½Ä·ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½
  *
  * @author Administrator
- * @date 2019Äê2ÔÂ4ÈÕ ÉÏÎç9:11:48
+ * @date 2019ï¿½ï¿½2ï¿½ï¿½4ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½9:11:48
  */
-public class Car2 {
+public class Car2 { 
 	private int maxSpeed;
 	public String brand;
 	private double price;
 	private User user;
 
-	// ÒÀÀµ×¢ÈëµÄ·½Ê½¶þ£º¹¹ÔìÆ÷×¢Èë¡£×¢ÈëµÄÌõ¼þÊÇ±ØÐëÒªÓÐÒ»¸ö´ø²ÎµÄ¹¹ÔìÆ÷¡£
-	// ËµÃ÷£ºÕâÀïÉùÃ÷ÁËÒ»¸ö´ø²ÎµÄ¹¹ÔìÆ÷¶øÃ»ÓÐÉùÃ÷²»´ø²ÎµÄ¹¹ÔìÆ÷£¬ËùÒÔ±¾ÀàÃ»ÓÐÄ¬ÈÏ¹¹ÔìÆ÷¡£ÎªÁËÑÝÊ¾¹¹ÔìÆ÷×¢Èë£¬ËùÒÔÕâÀïÆÁ±ÎÁËÄ¬ÈÏ¹¹ÔìÆ÷£¬µ«ÔÚÊµ¼Ê¹¤×÷ÖÐ£¬»¹ÊÇÒªÉùÃ÷Ò»¸ö²»´ø²ÎµÄ¹¹ÔìÆ÷µÄ¡£
+	// ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½Ä·ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½ë¡£×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç±ï¿½ï¿½ï¿½Òªï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ÎµÄ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	// Ëµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ÎµÄ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÎµÄ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½Ã»ï¿½ï¿½Ä¬ï¿½Ï¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½ë£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½Ï¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½Ê¹ï¿½ï¿½ï¿½ï¿½Ð£ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÎµÄ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¡ï¿½
 	public Car2(String brand, double price) {
 		super();
 		this.brand = brand;
@@ -21,7 +21,7 @@ public class Car2 {
 		System.out.println("this is 1.");
 	}
 
-	// ¶ÔÓÚÓÐ¹¹ÔìÆ÷ÖØÔØµÄÇé¿ö£¬Èç¹ûÔÚÅäÖÃÎÄ¼þÀïÃæ½öÊ¹ÓÃ<constructor-arg type="">»òÕß½öÊ¹ÓÃ<constructor-arg index="">£¬»áÒýÆðÆçÒå£¬¶øspring»áÕë¶ÔÆçÒåµÄÇé¿öËæ»úÑ¡ÔñÒ»¸ö¹¹ÔìÆ÷¶ø²¢²»±¨´í£¬µ«±»Ñ¡³öµÄÕâ¸ö¹¹ÔìÆ÷¿ÉÄÜ²»ÊÇ³ÌÐòÔ±ÏëÒªµÄ¡£ËùÒÔ£¬×î¼ÑÊµ¼ùÊÇtypeÊôÐÔºÍindexÊôÐÔ½áºÏÊ¹ÓÃ¡£
+	// ï¿½ï¿½ï¿½ï¿½ï¿½Ð¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Øµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½<constructor-arg type="">ï¿½ï¿½ï¿½ß½ï¿½Ê¹ï¿½ï¿½<constructor-arg index="">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½å£¬ï¿½ï¿½springï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½?ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü²ï¿½ï¿½Ç³ï¿½ï¿½ï¿½Ô±ï¿½ï¿½Òªï¿½Ä¡ï¿½ï¿½ï¿½ï¿½Ô£ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½typeï¿½ï¿½ï¿½Ôºï¿½indexï¿½ï¿½ï¿½Ô½ï¿½ï¿½Ê¹ï¿½Ã¡ï¿½
 	public Car2(double price, String brand) {
 		super();
 		this.brand = brand;
@@ -36,12 +36,17 @@ public class Car2 {
 		System.out.println("this is 3.");
 	}
 	
-	//ÔÚÄ³¸ö¹¹ÔìÆ÷ÖÐÈç¹ûÓÐÃ÷ÏÔÇøÓÚÓëÆäËü¹¹ÔìÆ÷µÄÈë²Î£¨ÈçÏÂÃæµÄUser£©£¬ÔòÔÚÅäÖÃµÄÊ±ºòÒ²¿ÉÒÔÊ¡ÂÔ<constructor-arg>±êÇ©µÄtypeºÍindexÊôÐÔ£¬spring¿ÉÒÔ¾«È·µØÆ¥Åäµ½¸Ã¹¹ÔìÆ÷£¬µ«ÊÇÎªÁË¿É¶ÁÐÔ×î¼ÑÊµ¼ùÊÇÐ´ÉÏtypeºÍindexÊôÐÔ
+	//ï¿½ï¿½Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Userï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ãµï¿½Ê±ï¿½ï¿½Ò²ï¿½ï¿½ï¿½ï¿½Ê¡ï¿½ï¿½<constructor-arg>ï¿½ï¿½Ç©ï¿½ï¿½typeï¿½ï¿½indexï¿½ï¿½ï¿½Ô£ï¿½springï¿½ï¿½ï¿½Ô¾ï¿½È·ï¿½ï¿½Æ¥ï¿½äµ½ï¿½Ã¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½Ë¿É¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½typeï¿½ï¿½indexï¿½ï¿½ï¿½ï¿½
 	public Car2(int maxSpeed, User user) {
 		super();
 		this.maxSpeed = maxSpeed;
 		this.user = user;
 		System.out.println("this is 4.");
+	}
+	
+	public Car2() {
+		super();
+		System.out.println("init Car2.");
 	}
 
 	public String toString() {

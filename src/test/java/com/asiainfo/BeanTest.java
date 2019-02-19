@@ -2,6 +2,7 @@ package com.asiainfo;
 
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -13,7 +14,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class BeanTest {
 	@Test
 	public void testCar() {
-		ApplicationContext applicationContext_p = new ClassPathXmlApplicationContext("classpath:applicationContext_zzw.xml");
+		ClassPathXmlApplicationContext applicationContext_p = new ClassPathXmlApplicationContext("classpath:applicationContext_zzw.xml");
 //		Car car = (Car) applicationContext.getBean("car1;car2");
 //		System.out.println(car);
 		
@@ -27,13 +28,25 @@ public class BeanTest {
 //		System.out.println(car);
 		
 //		ApplicationContext applicationContext_s = new ClassPathXmlApplicationContext(new String[]{"classpath:applicationContext_zzw_2.xml"}, applicationContext_p);
+		Object obj = applicationContext_p.getBean("iService");
+		System.out.println(obj);
 		
-		Object obj = applicationContext_p.getBean("user7");
-//		Object obj2 = applicationContext_p.getBean("user7");
-//		Object obj3 = applicationContext_p.getBean("user7");
-//		System.out.println(obj);
-//		System.out.println(obj2);
-		User7 s = (User7) obj;
-		System.out.println(s.getANewCar());
+//		ApplicationContext ctx = new AnnotationConfigApplicationContext(CarConfig.class);
+//		Object bean = ctx.getBean("car7");
+//		System.out.println("-----------------");
+//		System.out.println(bean);
+		
+//		AnnotationConfigApplicationContext ctx2 = new AnnotationConfigApplicationContext();
+//		ctx2.register(CarConfig.class, User12.class);
+//		ctx2.register(User12.class);
+//		ctx2.refresh();
+//		
+//		Object bean = ctx2.getBean("car88");
+//		Object bean2 = ctx2.getBean("user12");
+//		Object bean3 = ctx2.getBean("si");
+//		System.out.println("-----------------");
+//		System.out.println(bean);
+//		System.out.println(bean2);
+//		System.out.println(bean3);
 	}
 }

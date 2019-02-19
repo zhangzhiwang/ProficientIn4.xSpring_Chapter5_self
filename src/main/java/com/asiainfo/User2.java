@@ -3,7 +3,7 @@ package com.asiainfo;
 import java.io.Serializable;
 import java.util.Date;
 
-public class User2 implements Serializable {
+public class User2 implements Serializable { 
 	private String name;
 	private Car3 car3;
 
@@ -15,7 +15,7 @@ public class User2 implements Serializable {
 
 	public User2() {
 		super();
-		System.out.println("User2 ¹¹ÔìÍê³É¡£");
+		System.out.println("User2 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¡ï¿½");
 	}
 
 	public void setName(String name) {
